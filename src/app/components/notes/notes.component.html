@@ -1,0 +1,66 @@
+
+<section class="section" *ngIf="!edit">
+
+    <div class="columns">
+    
+        <div class="column is-5">
+    
+            <section class="section">
+                <h1 class="title">Note Section</h1>
+                <h2 class="subtitle">
+                    Create your owrns <strong>notes</strong>, and never forgot your plans!
+                </h2>
+            </section>
+    
+        </div>
+    
+        <div class="column">
+
+            <div class="columns is-multiline">
+
+                <div class="column is-half-desktop" *ngFor="let note of notes">
+                    <div class="card">
+                        <header class="card-header">
+                            <p class="card-header-title">
+                                {{note.title}}
+                            </p>
+                            <button class="card-button-edit--color" aria-label="more options" (click)="editNote(note)">
+                                <span class="icon">
+                                    <i class="fas fa-edit"></i>
+                                </span>
+                            </button>
+                        </header>
+                        <div class="card-content">
+                            <div class="content">
+                                <p>
+                                    {{note.name}}
+                                </p>
+                                <p>
+                                    {{note.date | date}}
+                                </p>
+                                <p>
+                                    {{note.content}}
+                                </p>
+                            </div>
+                        </div>
+                        <footer class="card-footer">
+                            <button class="button is-fullwidth is-danger" (click)="deleteNote(note)">Delete note</button>  
+                        </footer>
+                    </div>
+                </div>
+
+            </div>
+    
+        </div>
+    </div>
+
+</section>
+
+
+<div *ngIf="edit">
+    <app-create-note [status]='note' (noteComplate)="noteEvent($event)"></app-create-note>
+</div>
+
+
+
+

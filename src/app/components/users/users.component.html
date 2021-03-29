@@ -1,0 +1,55 @@
+<section class="section">
+    <div class="columns is-multiline">
+        <div class="column is-4">
+            <div class="card">
+                <div class="card-header-title">
+                   <p class="has-text-info">
+                      Create Users
+                   </p>
+                </div>
+                <div class="card-content">
+                 
+                    <form (ngSubmit)="createUser(userPost)" #userPost="ngForm">
+                        <div class="columns is-mobile is-multiline">
+                        
+                            <div class="column is-12">
+                                <input class="input is-primary" type="text" placeholder="type name" name="name" [(ngModel)]="user.name" required maxlength="15"
+                                (focus)="showAlert = false">
+                                <span class="has-text-danger" *ngIf="showAlert">Juts type your name!</span>
+                            </div>
+                            <div class="column is-12">
+                                <button type="submit" [disabled]="!userPost.form.valid" class="button is-fullwidth is-link is-rounded">saver user</button>
+                            </div>
+                        </div>
+    
+                    </form>
+    
+                </div>
+            </div>
+        </div>
+    
+        <div class="column">
+
+            <div class="columns is-multiline">
+                
+                <div class="column is-half-desktop" *ngFor="let user of users">
+                    <div class="card">
+                        <header class="card-header">
+                          <p class="card-header-title">
+                            {{user.name}}
+                          </p>
+                          <button class="card-button--color" aria-label="more options" (click)="deleteUser(user)">
+                            <span class="icon">
+                                <i class="fas fa-trash-alt"></i>
+                            </span>
+                          </button>
+                        </header>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>

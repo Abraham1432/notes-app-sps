@@ -1,27 +1,30 @@
-# NotesAppSps
+# Note App! 📝
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
+Documentación del projecto Note App
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# Funciones
 
-## Code scaffolding
+ 1. Creación de usuario.
+ 2. Creacion de notas.
+ 3. Modficación de notas.
+ 4. Eliminar usuario.
+ 5. Eliminar nota.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Estructura del proyecto 💻
 
-## Build
+ - las variables de entorno las podras encontrar en el archillo de environments.
+ - El flujo de la información del usuario y la notas se maneja con observables, por lo que si se desa modificar o esuchar los datos es importante hacer desde el archivo de servicios
+ - Se utiliza un tiempo de 15 minutos para eliminar la información que se guarda de información con el usuario.
+ - Las peticiones al sevidor solo se almacenan miestras el usuario tenga una sesión abierta. 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+## Deployments center:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+**Url del sitio** : [app notes](https://front-end-opi.web.app/)
+**Url de la Api** : [api-notes](https://api-notes-a.herokuapp.com/api_notes_app/)
 
-## Running end-to-end tests
+## Next steps
+	
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+ - [ ] Hacer PWA el sitio.

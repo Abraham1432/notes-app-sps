@@ -1,0 +1,10 @@
+@import '../../../styles.scss';
+
+.card-button--color{
+    color: $danger;
+    background: transparent;
+    border: transparent;
+    font-size: larger;
+    cursor: pointer;
+
+}

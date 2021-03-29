@@ -1,0 +1,22 @@
+@import '../styles.scss';
+
+.loading{
+    
+    height: 100vh;
+    z-index: 200;
+    padding-top: 20%;
+    position: absolute;
+    background-color: rgba($color: $primary-note, $alpha: 0.4);
+
+}
+
+.progress-loading{
+    width: 50%;
+    margin-left: 25%;
+}
+
+.position-loading{
+
+    position: relative;
+
+}

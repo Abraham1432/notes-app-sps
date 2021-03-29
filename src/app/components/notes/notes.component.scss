@@ -1,0 +1,10 @@
+@import '../../../styles.scss';
+
+.card-button-edit--color{
+    color: $link;
+    background: transparent;
+    border: transparent;
+    font-size: larger;
+    cursor: pointer;
+
+}

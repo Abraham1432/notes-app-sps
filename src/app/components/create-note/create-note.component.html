@@ -1,0 +1,65 @@
+<section class="section">
+    <div class="columns is-centered">
+        <div class="column is-two-fifths">
+            <div class="card">
+                <header class="card-header">
+                    <p class="has-text-info card-header-title">
+                        {{title}}
+                    </p>
+                    <button *ngIf="status" class="button is-danger is-light is-medium" aria-label="cancel" (click)="back()">
+                        cancel
+                    </button>
+                </header>   
+                <div class="card-content">
+
+                    <form  (ngSubmit)="sendNote(postNote)" #postNote="ngForm">
+                      
+                        <div class="columns is-mobile is-multiline">
+                        
+                            <div class="column is-12">
+                                <div class="select">
+                                    <select class="select" name="user" required [(ngModel)]="note.user">
+                                      <option disabled selected>Select user</option>
+                                      <option *ngFor="let user of users" [value]="user.name">{{user.name}}</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="column is-12">
+                                <input class="input is-primary" 
+                                    type="text" placeholder="title" 
+                                    (blur)="showAlertTitle = false"
+                                    maxlength="20"
+                                    name="title" [(ngModel)]="note.title" required>
+                                <span class="has-text-danger" *ngIf="showAlertTitle">Type title!</span>
+                            </div>
+                            <div class="column is-12">
+                                <textarea class="textarea" 
+                                placeholder="Coments" name="content"
+                                (blur)="showAlertContent = false"
+                                maxlength="100" 
+                                [(ngModel)]="note.content" required></textarea>
+                                <span class="has-text-danger" *ngIf="showAlertContent">Please don't type special characters </span>
+                            </div>
+                            <div class="column is-12">
+                                <input class="input is-primary" 
+                                    type="date" placeholder="Fecha de creación" 
+                                    name="date" [(ngModel)]="note.date" required>
+                            </div>
+
+                            <div class="column is-12">
+                                <button type="submit" class="button is-fullwidth is-link is-rounded" 
+                                    [disabled]="!postNote.form.valid">Save
+                                </button>
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
