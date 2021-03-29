@@ -4,6 +4,7 @@ import { httpApiEnvironments, note, user } from '../interfaces/notes-app';
 
 import { environment } from "../../environments/environment";
 import { HttpClient } from '@angular/common/http';
+import swal from 'sweetalert';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +27,12 @@ export class ApiService {
 
   }
   
+    showAlert(msg){
+
+
+      swal("Good job!", msg, "success");
+
+    }
 
    validateInputs(string){
 

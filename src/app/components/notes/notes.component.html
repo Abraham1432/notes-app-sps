@@ -21,7 +21,7 @@
                 <div class="column is-half-desktop" *ngFor="let note of notes">
                     <div class="card">
                         <header class="card-header">
-                            <p class="card-header-title">
+                            <p class="card-header-title has-text-info">
                                 {{note.title}}
                             </p>
                             <button class="card-button-edit--color" aria-label="more options" (click)="editNote(note)">
@@ -33,10 +33,10 @@
                         <div class="card-content">
                             <div class="content">
                                 <p>
-                                    {{note.name}}
+                                    by: {{note.user}}
                                 </p>
                                 <p>
-                                    {{note.date | date}}
+                                    publish date: {{note.date | date}}
                                 </p>
                                 <p>
                                     {{note.content}}

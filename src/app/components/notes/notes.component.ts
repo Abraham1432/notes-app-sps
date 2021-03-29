@@ -53,15 +53,12 @@ export class NotesComponent implements OnInit {
 
     if(removeNote != 0){
       //show alter user;
-     
+      this._api.showAlert("The note has been deleted!");
       let filterNotes = this.notes.filter(u => u._id !== note._id);
 
       this._api.setLocalData('notes',filterNotes)
       this._api.$notes.next(filterNotes);
 
-
-    }else{
-      //somtings wrog 
     }
 
   }

@@ -45,6 +45,7 @@ export class UsersComponent implements OnInit, OnDestroy {
 
       this.user = {};
 
+      this._api.showAlert("The user has been create!");
       //show alter user;
       this.updateStatus(postUser,'add');
 
@@ -61,6 +62,7 @@ export class UsersComponent implements OnInit, OnDestroy {
 
     if(deleteUser != 0){
       //show alter user;
+      this._api.showAlert("The user has been deleted!");
       this.updateStatus(user,'delete');
 
     }else{
@@ -90,7 +92,6 @@ export class UsersComponent implements OnInit, OnDestroy {
   }
 
 
-  
 
     updateStatus(user:user,key:string){
 

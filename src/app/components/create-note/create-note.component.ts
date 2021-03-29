@@ -98,9 +98,8 @@ export class CreateNoteComponent implements OnInit {
 
         if(sendNote != 0){
   
+          this._api.showAlert("The note has been update!");
           this.updateStatus(this.note,'update');
-  
-        }else{
   
         }
 
@@ -110,9 +109,8 @@ export class CreateNoteComponent implements OnInit {
 
         if(sendNote != 0){
   
+          this._api.showAlert("The note has been created!");
           this.updateStatus(sendNote.note,'add');
-  
-        }else{
   
         }
 
@@ -148,7 +146,7 @@ export class CreateNoteComponent implements OnInit {
       this.noteComplate.emit(false);
     }
 
-    this.note;
+    this.note = {};
 
   }
 
