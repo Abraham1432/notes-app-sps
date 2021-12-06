@@ -21,8 +21,6 @@ Documentación del projecto Note App
 
 ## Deployments center:
 
-**Url del sitio** : [app notes](https://front-end-opi.web.app/)
-**Url de la Api** : [api-notes](https://api-notes-a.herokuapp.com/api_notes_app/)
 
 ## Next steps
 	
